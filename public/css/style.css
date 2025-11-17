@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(
+            rgba(101, 140, 88, 0.7),
+            /* Sedikit lebih gelap agar konten lebih menonjol */
+                rgba(101, 140, 88, 0.7)
+        ),
+        /* Asumsi file bg.png ada di public/img/bg.png */ url("/img/bg.png")
+            center/cover no-repeat fixed;
+    font-family: "Poppins", sans-serif; /* Pastikan font Poppins tersedia */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container-main {
+    width: 100%;
+    max-width: 900px; /* Ukuran maksimal container utama */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+}
+
+/* KOTAK KIRI (Warna Hijau) */
+.left-box {
+    background-color: #658c58; /* Warna hijau solid */
+    flex: 1;
+    min-height: 450px;
+    border-radius: 12px 0 0 12px;
+}
+
+/* KONTEN KANAN (Tempat Form/Pilihan) */
+.right-content {
+    flex: 2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Konten di tengah vertikal */
+}
+
+.select-box {
+    background-color: #f0f8ff; /* Warna aliceblue untuk select box */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.form-control-custom {
+    background-color: #f0f8ff; /* Warna aliceblue untuk input fields */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.btn-custom {
+    background-color: #b5c973; /* Warna tombol custom */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #a4b765;
+    color: white;
+}
+
+/* Link Lupa Password */
+.forgot-password-link {
+    color: #658c58;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness: Pada layar kecil, kotak kiri hilang dan kotak kanan penuh */
+@media (max-width: 768px) {
+    .left-box {
+        display: none;
+    }
+    .container-main {
+        max-width: 95%;
+        border-radius: 12px;
+    }
+    .right-content {
+        flex: 1;
+        padding: 30px;
+    }
+}
